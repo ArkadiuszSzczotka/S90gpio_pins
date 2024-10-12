@@ -1,1 +1,1 @@
-This is modyfication for relays that are active in low by setting in active_low "1".
+This is modification for relays that are active in low by setting in active_low "1".
