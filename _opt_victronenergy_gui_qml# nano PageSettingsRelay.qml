@@ -16,7 +16,7 @@ MbPage {
         model: VisibleItemModel {
                 MbItemOptions {
                         id: relayFunction
-                        description: hasRelay1 ? qsTr("Function (Relay 1)") : qsTr("Function")
+                        description: hasRelay1 ? qsTr("Function (LED 1)") : qsTr("Function")
                         bind: Utils.path(bindPrefix, "/Settings/Relay/Function")
                         possibleValues:[
                                 MbOption { description: qsTr("Alarm relay"); value: 0 },
@@ -39,14 +39,14 @@ MbPage {
 
                 MbSwitch {
                         id: manualSwitch
-                        name: hasRelay1 ? qsTr("Lamp 1 On") : qsTr("Relay On")
+                        name: hasRelay1 ? qsTr("LED 1") : qsTr("Relay On")
                         bind: "com.victronenergy.system/Relay/0/State"
                         show: relayFunction.value === 2 // manual mode
                 }
 
                 MbItemOptions {
                         id: relay1Function
-                        description: hasRelay1 ? qsTr("Function (Relay 2)") : qsTr("Function")
+                        description: hasRelay1 ? qsTr("Function (LED 2)") : qsTr("Function")
                         bind: Utils.path(bindPrefix, "/Settings/Relay/1/Function")
                         show: hasRelay1
                         possibleValues:[
@@ -57,7 +57,7 @@ MbPage {
 
                 MbSwitch {
                         id: manualSwitch1
-                        name: qsTr("Lamp 2 On")
+                        name: qsTr("LED 2")
                         bind: "com.victronenergy.system/Relay/1/State"
                         show: hasRelay1 && relay1Function.value === 2 // manual
                 }
@@ -76,7 +76,7 @@ MbPage {
 
                 MbSwitch {
                 id: manualSwitch2
-                name: qsTr("Przekaźnik 3 włączony")
+                name: qsTr("Kamery")
                 bind: "com.victronenergy.system/Relay/2/State"
                 show: hasRelay2
                 }
